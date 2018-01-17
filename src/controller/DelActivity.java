@@ -19,7 +19,7 @@ public class DelActivity extends HttpServlet {
         ActivityDAO dao = new ActivityDAO();
         dao.delete(activity);
 
-        request.getRequestDispatcher("SqlServlet").forward(request, response);
+        response.sendRedirect("SqlServlet");
     }
 
 }
