@@ -28,5 +28,4 @@ public class SqlServlet extends HttpServlet {
         request.setAttribute("activities", activities);
         request.getRequestDispatcher("activities.jsp").forward(request, response);
     }
-
 }
