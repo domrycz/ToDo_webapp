@@ -17,9 +17,11 @@ public class DelActivity extends HttpServlet {
         Activity activity = new Activity();
         activity.setId(Integer.valueOf(request.getParameter("id")));
         ActivityDAO dao = new ActivityDAO();
-        dao.delete(activity);
 
-        response.sendRedirect("SqlServlet");
+        if(dao.delete(activity)) {
+            response.sendRedirect("SqlServlet");
+        } else {
+            response.sendRedirect("error.jsp");
+        }
     }
-
 }
